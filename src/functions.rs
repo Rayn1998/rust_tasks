@@ -37,3 +37,19 @@ pub fn fibonaci() {
         println!("The {input}'th Fibonacci number is: {res}");
     }
 }
+
+pub fn f_to_celsius() {
+    loop {
+        println!("Please enter the value in Fahrenheit:");
+    
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).expect("Failed");
+    
+        let input: f32 = match input.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+        let celsius: f32 = (input - 32.0) / 1.8;
+        println!("This temperature in Celsius is: {celsius}");
+    }
+}
